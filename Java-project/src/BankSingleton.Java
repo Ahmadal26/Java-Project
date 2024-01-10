@@ -4,7 +4,7 @@ public class BankSingleton {
     private User user;
 
     private BankSingleton() {
-       
+
     }
 
     public static BankSingleton getInstance() {
@@ -12,19 +12,18 @@ public class BankSingleton {
             instance = new BankSingleton();
         }
         return instance;
+
+    }
+
+    public User getUser() {
+        return user;
     }
 
     public void setUser(User user) {
         this.user = user;
     }
-    public User getUser(User user){
-        return user;
-    }
 
     public boolean authenticateUser(String enteredUsername, String enteredPassword) {
-        
         return user != null && user.getUserName().equals(enteredUsername) && user.getPassword().equals(enteredPassword);
     }
-
-   
 }
