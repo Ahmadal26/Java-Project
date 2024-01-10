@@ -2,9 +2,9 @@ public class User {
 
     private String userName;
     private String password;
-    private String account;
+    private BankAccount account;
 
-    public User(String userName, String password, String account) {
+    public User(String userName, String password, BankAccount account) {
         this.userName = userName;
         this.password = password;
         this.account = account;
@@ -26,13 +26,16 @@ public class User {
         this.password = password;
     }
 
-    public String getAccount() {
+    public BankAccount getAccount() {
         return account;
     }
 
-    public void setAccount(String account) {
+    public void setAccount(BankAccount account) {
         this.account = account;
+
+
+       
+    
     }
 
 }
-// not done (instance)
