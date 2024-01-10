@@ -5,7 +5,7 @@ public class BankAccount {
 
     private int accountNumber;
     private double balance;
-    private List<String> transactionHistory;
+    private List<Transaction> transactionHistory;
 
     public BankAccount(int accountNumber, double balance) {
         this.accountNumber = accountNumber;
@@ -16,7 +16,8 @@ public class BankAccount {
     public void deposit(double amount) {
         if (amount > 0) {
             balance += amount;
-            transactionHistory.add("Deposit: +$" + amount);
+            Transaction depositTransaction = new Transaction("Deposit", "Deposit", amount);
+            transactionHistory.add(depositTransaction);
             System.out.println("Deposit successful. New balance: $" + balance);
         } else {
             System.out.println("Invalid deposit amount. Please enter a positive value.");
@@ -26,7 +27,8 @@ public class BankAccount {
     public void withdraw(double amount) {
         if (amount > 0 && amount <= balance) {
             balance -= amount;
-            transactionHistory.add("Withdrawal: -$" + amount);
+            Transaction withdrawalTransaction = new Transaction("Withdrawal", "Withdrawal", amount);
+            transactionHistory.add(withdrawalTransaction);
             System.out.println("Withdrawal successful. New balance: $" + balance);
         } else if (amount <= 0) {
             System.out.println("Invalid withdrawal amount. Please enter a positive value.");
@@ -37,8 +39,10 @@ public class BankAccount {
 
     public void displayTransactionHistory() {
         System.out.println("Transaction History:");
-        for (String transaction : transactionHistory) {
-            System.out.println(transaction);
+        for (Transaction transaction : transactionHistory) {
+            System.out.println("Date: " + transaction.getDate() +
+                    ", Type: " + transaction.getType() +
+                    ", Amount: $" + transaction.getAmount());
         }
     }
 

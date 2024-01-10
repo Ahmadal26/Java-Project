@@ -1,29 +1,31 @@
+import java.time.LocalDateTime;
+
 public class Transaction {
 
-    private String date;
-    private double deposit;
+    private LocalDateTime date;
+    private String type;
     private double amount;
 
-    public Transaction(String date, double deposit, double amount) {
-        this.date = date;
-        this.deposit = deposit;
+    public Transaction(String date, String type, double amount) {
+        this.date = LocalDateTime.now();
+        this.type = type;
         this.amount = amount;
     }
 
-    public String getDate() {
+    public LocalDateTime getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(LocalDateTime date) {
         this.date = date;
     }
 
-    public double getDeposit() {
-        return deposit;
+    public String getType() {
+        return type;
     }
 
-    public void setDeposit(double deposit) {
-        this.deposit = deposit;
+    public void setType(String type) {
+        this.type = type;
     }
 
     public double getAmount() {

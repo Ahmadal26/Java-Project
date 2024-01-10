@@ -1,14 +1,12 @@
 public class BankSingleton {
     
-     // Static instance
-     //+ not sure 
-     private static BankSingleton instance;
-    private BankSingleton() {
+    
+ private static BankSingleton instance;
+private BankSingleton() {
 
         
 
     }
-    
     public static BankSystem getInstance() {
 
         if (instance == null) {
@@ -21,16 +19,16 @@ public class BankSingleton {
 
 
 
-    Scanner myScanner =new Scanner(System.in); 
+    // Scanner myScanner =new Scanner(System.in); 
     
 
-    public String validation(String userName, int password){
+//     public String validation(String userName, int password){
 
-if (userName)
+// if (userName)
 
 
 
-    }
+//     }
 
 }
 // not Done 
