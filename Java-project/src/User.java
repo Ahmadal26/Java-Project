@@ -74,12 +74,3 @@ public class User {
         System.out.println("Password updated successfully");
     }
 }
-
-// if(isUserNameUnique(existingUsers, newUsername)){
-// this.userName =newUsername;
-// System.out.println("Username updated successfully.");
-
-// }else{
-// System.out.println("Username already exists. Please choose a different one.
-// ");
-// }

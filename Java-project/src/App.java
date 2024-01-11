@@ -71,27 +71,7 @@ public class App {
                         break;
                 }
             }
-            // System.out.print("Enter username: ");
-            // String enteredUsername = scanner.nextLine();
 
-            // System.out.print("Enter password: ");
-            // String enteredPassword = scanner.nextLine();
-
-            // if (bankSingleton.authenticateUser(enteredUsername, enteredPassword)) {
-            // System.out.println("Authentication successful!");
-
-            // user.createBankAccount();
-
-            // userAccount.deposit(500);
-
-            // userAccount.withdraw(200);
-            // userAccount.displayTransactionHistory();
-
-            // System.out.println("Current balance: $" + userAccount.getBalance());
-            // System.out.println("Account number: " + userAccount.getAccountNumber());
-            // } else {
-            // System.out.println("Authentication failed. Invalid username or password.");
-            // }
         } catch (Exception e) {
             System.out.println("An error occurred: " + e.getMessage());
         } finally {
@@ -100,8 +80,3 @@ public class App {
         }
     }
 }
-
-// System.out.println("Current balance: $" +
-// user.getAccounts().get(0).getBalance());
-// System.out.println("Account number: " +
-// user.getAccounts().get(0).getAccountNumber());
