@@ -5,6 +5,7 @@ import java.util.List;
 public class User {
 
     private String userName;
+
     private String password;
     private List<BankAccount> accounts;
 
@@ -43,18 +44,42 @@ public class User {
         return true;
     }
 
-    public void createBankAccount(List<User> existingUsers) {
-        if (isUserNameUnique(existingUsers, userName) && accounts.isEmpty()) {
+    public void createBankAccount() {
+        int accountNumber = (int) (Math.random() * 1000000);
 
-            int accountNumber = (int) (Math.random() * 1000000);
+        BankAccount newAccount = new BankAccount(accountNumber, 0.0);
 
-            BankAccount newAccount = new BankAccount(accountNumber, 0.0);
+        accounts.add(newAccount);
 
-            accounts.add(newAccount);
+        System.out.println("Bank account created successfully. Account number: " + accountNumber);
+    }
 
-            System.out.println("Bank account created successfully. Account number: " + accountNumber);
-        } else {
-            System.out.println("Username is not unique or user already has a bank account.");
+    public void displayAccountDetails() {
+        System.out.println("Username" + userName);
+        System.out.println("Number of accounts: " + "1");// "accounts.size()"
+        for (BankAccount account : accounts) {
+            System.out.println("Account Number: " + account.getAccountNumber());
+            System.out.println("Balance: $" + account.getBalance());
         }
     }
+
+    public void updateUsername(String newUsername) {
+        this.userName = newUsername;
+        System.out.println("Username is updated successfully");
+    }
+
+    public void updatedPassword(String newPassword) {
+
+        this.password = newPassword;
+        System.out.println("Password updated successfully");
+    }
 }
+
+// if(isUserNameUnique(existingUsers, newUsername)){
+// this.userName =newUsername;
+// System.out.println("Username updated successfully.");
+
+// }else{
+// System.out.println("Username already exists. Please choose a different one.
+// ");
+// }
